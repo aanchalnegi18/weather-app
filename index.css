@@ -1,0 +1,171 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.container{
+ 
+/*background: url(https://w0.peakpx.com/wallpaper/196/282/HD-wallpaper-anime-scenery-purple-tree-anime-scenery-purple-tree-full-moon-reflection-animation.jpg);*/
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+ 
+}
+
+
+#contentId {
+
+  position: relative; /* Parent container */
+  height: 100%;
+  width: 40%;
+  border-radius: 20px;
+  z-index: 1; /* Ensure it stays behind the content */
+  overflow: hidden; /* Prevent pseudo-element from overflowing */
+}
+
+#contentId::before {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 2px solid blueviolet;
+  border-radius: 20px;
+  background:url(https://w0.peakpx.com/wallpaper/196/282/HD-wallpaper-anime-scenery-purple-tree-anime-scenery-purple-tree-full-moon-reflection-animation.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Apply blur only to the background */
+  z-index: -1; /* Ensure it stays behind the content */}
+  
+
+
+
+.content{ position: relative;
+  z-index: 2;/* Ensure it apears above #contentId*/
+  display: flex;
+ 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color:#fff;
+   border-radius: 10px;
+  border:2px solid grey;
+  border-radius: 20px;
+ 
+  background-position: center;
+  background-size: cover;
+
+  }
+  h1{
+    color: #ffff;
+    font-style: oblique;
+    font-weight: 900;
+    position: relative;
+    z-index: 2;
+  }
+nav{ 
+  
+  position: absolute;
+  top: 10px;
+   height: 50px;
+  
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-evenly;
+}
+nav input{
+  background-color: transparent;
+  color:#fff;
+  position: relative;
+  z-index: 1;
+  font-size: 30px;
+  text-align: center;
+  width: 60%;
+  margin-left: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+nav button{
+  background-color: transparent;
+ cursor: pointer;
+height: 50px;
+width: 50px;
+border-radius: 50px;
+  margin-right: 10px;
+}
+nav button i{
+  color:black
+}
+.items{
+  
+  background-color: transparent;
+  display: flex;
+  overflow: hidden;
+ justify-content: center;
+  text-align: center;
+  height: calc(100% - 50px);
+  width: 100%;
+  
+ 
+  
+}
+.item{
+  align-self: center;
+  height: 50%;
+ position: relative;
+  width: 50%;
+ background-color: rgb(10, 10, 10, 0.7);
+ opacity: 0.444;
+
+  font-size: 20px;
+  
+ justify-content: center;
+ align-items: center;
+  display: flex;
+ flex-direction: column;
+  z-index: 1;
+
+}
+.icon{
+ 
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: space-between;
+  width: 100%;
+ padding: 5px;
+ gap:10px;
+}
+
+
+
+ .temp, .city ,.humidity, .wind{
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+
+@media  (max-width: 650px) {
+  .container {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 650px;
+     
+    display: flex;
+    justify-content: flex-start;
+  }
+  .content {
+    height: 100vh;
+    width: 100vw;
+  }
+  }
